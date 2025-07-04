@@ -14,5 +14,14 @@
         <p>3. Event binding: interactive element binds to an function</p>
         <input #targetInput type="text" [id]="id" placeholder="My Text">
         <button (click)="onPlay(targetInput.value)">Play</button>
+        <div>
+            <p></p>
+            <!-- ($event) == event object -->
+            <select name="countries" id="targetDropdown" (change)="onChange($event)">
+                <option value="United States">United States</option>
+                <option value="France">France</option>
+                <option value="China">China</option>
+            </select>
+        </div>
     </div>
 </div>

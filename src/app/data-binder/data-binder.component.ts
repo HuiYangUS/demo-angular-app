@@ -27,7 +27,7 @@ export class DataBinderComponent {
    */
   image_path: string = "demo-2025-07-03.jpg";
   /**
-   * Data from client pass to function
+   * Data pass from client to function
    */
   onPlay(text: string) {
     let is_empty: boolean = text.trim().length == 0;
@@ -36,4 +36,10 @@ export class DataBinderComponent {
     }
     alert(text);
   }
+
+  onChange(targetEvent: any) {
+    let targetText = targetEvent.target.value;
+    alert("You have changed your selection: " + targetText);
+  }
+
 }
