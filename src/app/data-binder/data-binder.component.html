@@ -25,4 +25,9 @@
             <button (click)="onSubmit(targetSelect.value)">Submit</button>
         </div>
     </div>
+    <h3>Two Ways Data Binder</h3>
+    <div>
+        <!-- [(ngModel)] synchronizes any change between client and component variable -->
+        <input type="text" placeholder="Change Me" [(ngModel)]="randomText">=> {{randomText}}
+    </div>
 </div>

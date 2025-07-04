@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-data-binder',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './data-binder.component.html',
   styleUrl: './data-binder.component.scss'
 })
@@ -45,5 +46,7 @@ export class DataBinderComponent {
   onSubmit(selectedValue: string) {
     alert(selectedValue);
   }
+
+  randomText = "";
 
 }
