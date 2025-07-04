@@ -5,7 +5,11 @@ import { DataBinderComponent } from './data-binder/data-binder.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, UserComponent, DataBinderComponent],
+  imports: [
+    RouterOutlet,
+    UserComponent,
+    DataBinderComponent
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
