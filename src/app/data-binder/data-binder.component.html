@@ -1,0 +1,18 @@
+<div align="center">
+    <h3>One Way Data Binder</h3>
+    <div>
+        <p>1. Interpolation: embedded data as content within the element</p>
+        <p><u>{{name}}</u>: {{title}}</p>
+    </div>
+    <div>
+        <p>2. Property binding: embedded data as properties within the element</p>
+        <div style="height: 120px; width: 120px; border: 1px solid forestgreen;">
+            <img style="object-fit: contain; height: 100%; width: 100%;" [src]="image_path">
+        </div>
+    </div>
+    <div>
+        <p>3. Event binding: interactive element binds to an function</p>
+        <input #targetInput type="text" [id]="id" placeholder="My Text">
+        <button (click)="onPlay(targetInput.value)">Play</button>
+    </div>
+</div>
