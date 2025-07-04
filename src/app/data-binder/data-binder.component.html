@@ -17,11 +17,12 @@
         <div>
             <p></p>
             <!-- ($event) == event object -->
-            <select name="countries" id="targetDropdown" (change)="onChange($event)">
+            <select #targetSelect name="countries" id="targetDropdown" (change)="onChange($event)">
                 <option value="United States">United States</option>
                 <option value="France">France</option>
                 <option value="China">China</option>
             </select>
+            <button (click)="onSubmit(targetSelect.value)">Submit</button>
         </div>
     </div>
 </div>

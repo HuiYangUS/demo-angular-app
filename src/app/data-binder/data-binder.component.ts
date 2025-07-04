@@ -42,4 +42,8 @@ export class DataBinderComponent {
     alert("You have changed your selection: " + targetText);
   }
 
+  onSubmit(selectedValue: string) {
+    alert(selectedValue);
+  }
+
 }
