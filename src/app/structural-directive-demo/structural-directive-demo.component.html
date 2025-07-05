@@ -1,0 +1,38 @@
+<div class="row text-center">
+    <div class="col-12 m-3">
+        <b>Example of *ngIf VS {{ifFuncText}} </b>
+    </div>
+</div>
+
+<div class="row text-center">
+    <div class="col-4">
+        <div>
+            <input (click)="onClick()" type="checkbox" name="" id=""> Terms and Conditions
+        </div>
+        <div *ngIf="isChecked">
+            <button type="button" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+    <div class="col-4">
+        <div *ngIf="!isHidden" class="m-2" style="border: 3px solid skyblue;">
+            <strong style="font-family: Georgia, 'Times New Roman', Times, serif;">Long Walk on the
+                Beach</strong>
+        </div>
+        <button (click)="clickShowTarget()" type="button" class="btn btn-success m-3">Show Me</button>
+        <button (click)="clickHideTarget()" type="button" class="btn btn-danger m-3">Hide Me</button>
+    </div>
+    <div class="col-4">
+        <div>
+            <input (change)="findEmptyValue()" class="m-1" type="text" [(ngModel)]="inputA">
+            <input (change)="findEmptyValue()" type="text" [(ngModel)]="target">
+        </div>
+        <div *ngIf="!isEmpty">
+            <div *ngIf="inputA == target">
+                <button type="button" class="btn btn-info">Both fields are equal</button>
+            </div>
+            <div *ngIf="inputA !== target">
+                <button type="button" class="btn btn-warning">Both fields are NOT equal</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { UserComponent } from './user/user.component';
 import { DataBinderComponent } from './data-binder/data-binder.component';
 import { DirectiveDemoComponent } from './directive-demo/directive-demo.component';
+import { StructuralDirectiveDemoComponent } from './structural-directive-demo/structural-directive-demo.component';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,8 @@ import { DirectiveDemoComponent } from './directive-demo/directive-demo.componen
     RouterOutlet,
     // UserComponent,
     // DataBinderComponent,
-    DirectiveDemoComponent
+    // DirectiveDemoComponent,
+    StructuralDirectiveDemoComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
