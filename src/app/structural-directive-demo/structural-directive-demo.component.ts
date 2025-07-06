@@ -37,4 +37,37 @@ export class StructuralDirectiveDemoComponent {
     this.isEmpty = this.inputA === this.target && this.inputA.trim().length === 0;
   }
 
+  forFuncText: string = "@for()";
+
+  employees: any[] = [
+    {
+      empNumber: 101,
+      empName: "John Smith",
+      empEmail: "john.smith@test.com",
+      empTitle: "Clerk"
+    },
+    {
+      empNumber: 102,
+      empName: "Mary Weaver",
+      empEmail: "mary.weaver@test.com",
+      empTitle: "Clerk"
+    },
+    {
+      empNumber: 103,
+      empName: "Hui Yang",
+      empEmail: "hui.yang@test.com",
+      empTitle: "CEO"
+    },
+    {
+      empNumber: 104,
+      empName: "Jane Doe",
+      empEmail: "jane.doe@test.com",
+      empTitle: "Manager"
+    }
+  ]
+
+  targetList: string[] = ["Google", "Amazon", "Microsoft"];
+
+  emptyList: string[] = [];
+
 }

@@ -1,6 +1,6 @@
 <div class="row text-center">
     <div class="col-12 m-3">
-        <b>Example of *ngIf VS {{ifFuncText}} </b>
+        <b>Examples of *ngIf VS {{ifFuncText}} </b>
     </div>
 </div>
 
@@ -9,15 +9,27 @@
         <div>
             <input (click)="onClick()" type="checkbox" name="" id=""> Terms and Conditions
         </div>
-        <div *ngIf="isChecked">
+        <!-- <div *ngIf="isChecked">
             <button type="button" class="btn btn-primary">Submit</button>
+        </div> -->
+        <div>
+            <!-- @if remove elements from the DOM -->
+            @if (isChecked) {
+            <button type="button" class="btn btn-primary">Submit</button>
+            }
         </div>
     </div>
     <div class="col-4">
-        <div *ngIf="!isHidden" class="m-2" style="border: 3px solid skyblue;">
+        <!-- <div *ngIf="!isHidden" class="m-2" style="border: 3px solid skyblue;">
+            <strong style="font-family: Georgia, 'Times New Roman', Times, serif;">Long Walk on the
+                Beach</strong>
+        </div> -->
+        @if (!isHidden) {
+        <div class="m-2" style="border: 3px solid skyblue;">
             <strong style="font-family: Georgia, 'Times New Roman', Times, serif;">Long Walk on the
                 Beach</strong>
         </div>
+        }
         <button (click)="clickShowTarget()" type="button" class="btn btn-success m-3">Show Me</button>
         <button (click)="clickHideTarget()" type="button" class="btn btn-danger m-3">Hide Me</button>
     </div>
@@ -27,12 +39,113 @@
             <input (change)="findEmptyValue()" type="text" [(ngModel)]="target">
         </div>
         <div *ngIf="!isEmpty">
-            <div *ngIf="inputA == target">
+            <!-- <div *ngIf="inputA == target">
+                <button type="button" class="btn btn-info">Both fields are equal</button>
+            </div> -->
+            @if (inputA==target) {
+            <div>
                 <button type="button" class="btn btn-info">Both fields are equal</button>
             </div>
+            } @else if (inputA!==target) {
             <div *ngIf="inputA !== target">
                 <button type="button" class="btn btn-warning">Both fields are NOT equal</button>
             </div>
+            } @else {
+            <div>
+                <button type="button" class="btn btn-danger">???</button>
+            </div>
+            }
+            <!-- <div *ngIf="inputA !== target">
+                <button type="button" class="btn btn-warning">Both fields are NOT equal</button>
+            </div> -->
         </div>
     </div>
+</div>
+
+<div class="row text-center">
+    <div class="col-12 m-3">
+        <b>Examples of *ngFor VS {{forFuncText}} </b>
+    </div>
+</div>
+
+<div class="row text-center">
+    <div class="col-4">
+        <select class="p-2" name="targetEmployees">
+            <!-- <option [value]="employee.empNumber" *ngFor="let employee of employees">
+                {{employee.empName}} - {{employee.empTitle}}
+            </option> -->
+            @for (employee of employees; track $index) {
+            <option [value]="employee.empNumber">
+                {{$index + 1}}. {{employee.empName}} - {{employee.empTitle}}
+            </option>
+            }
+        </select>
+    </div>
+    <div class="col-4">
+        <table class="table table-bordered">
+            <thead>
+                <tr id="targetHeaderRow">
+                    <th>Employee ID</th>
+                    <th>Employee Name</th>
+                    <th>Employee Email</th>
+                    <th>Job Title</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- <tr id="dataValueRow" *ngFor="let employee of employees">
+                    <td>{{employee.empNumber}}</td>
+                    <td>{{employee.empName}}</td>
+                    <td>{{employee.empEmail}}</td>
+                    <td>{{employee.empTitle}}</td>
+                </tr> -->
+                @for (employee of employees; track employee) {
+                <tr id="dataValueRow">
+                    <!-- Table Data -->
+                    <td>{{employee.empNumber}}</td>
+                    <td>{{employee.empName}}</td>
+                    <td>{{employee.empEmail}}</td>
+                    <td>{{employee.empTitle}}</td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="col-4">
+        <ul style="list-style-position: inside;" id="targetList">
+            <!-- <li style="text-align: center;" *ngFor="let item of targetList" testName="listItemValue">
+                {{item}}
+            </li> -->
+            @for (item of targetList; track item; let i=$index, c=$count, f=$first, l=$last, o=$odd, e=$even) {
+            @if (f==true) {
+            <li class="m-2" style="text-align: center; background-color: green;" testName="listItemValue">
+                {{item}}
+            </li>
+            }@else if (l==true) {
+            <li class="m-2" style="text-align: center; background-color: red;" testName="listItemValue">
+                {{item}}
+            </li>
+            } @else {
+            <li class="m-2" style="text-align: center;" testName="listItemValue">
+                {{item}}
+            </li>
+            }
+            }
+        </ul>
+    </div>
+    <div class="col-4">
+        @for (item of emptyList; track $index) {
+        <div testName="listItemValue">
+            {{item}}
+        </div>
+        }
+        @empty {
+        No results!
+        }
+    </div>
+    <div class="col-4">
+        <button *ngFor="let item of targetList" testName="listItemValue" type="button" class="btn btn-info m-2">
+            {{item}}
+        </button>
+    </div>
+
 </div>
