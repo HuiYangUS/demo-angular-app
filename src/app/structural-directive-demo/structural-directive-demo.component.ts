@@ -2,6 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+/**
+ * This demo all 3 types of structural directives of
+ * if (else if, else), for loop, switch 
+ */
 @Component({
   selector: 'app-structural-directive-demo',
   imports: [CommonModule, FormsModule],
