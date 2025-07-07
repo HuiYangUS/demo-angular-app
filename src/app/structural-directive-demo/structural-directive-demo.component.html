@@ -149,3 +149,46 @@
     </div>
 
 </div>
+
+<div class="row text-center">
+    <div class="col-12 m-3">
+        <b>Examples of *ngSwitch VS {{switchFuncText}} </b>
+    </div>
+</div>
+
+<div class="row text-center">
+    <div class="col-4">
+        <div>
+            <button (click)="setScore(1)" type="button" class="btn btn-success m-1">Pass</button>
+            <button (click)="setScore(2)" type="button" class="btn btn-warning m-1">Probation</button>
+            <button (click)="setScore(3)" type="button" class="btn btn-danger m-1">Failure</button>
+            <button (click)="setScore(0)" type="button" class="btn btn-secondary m-1">Reset</button>
+        </div>
+        <!-- <div [ngSwitch]="targetScore">
+            <strong *ngSwitchCase="1">You have passed!</strong>
+            <strong *ngSwitchCase="2">You have been warned.</strong>
+            <strong *ngSwitchCase="3">You have failed!</strong>
+            <strong *ngSwitchDefault>No test result found...</strong>
+        </div> -->
+        <div>
+            @switch (targetScore) {
+            @case (1) {
+            <strong>You have passed!</strong>
+            }
+            @case (2) {
+            <strong>You have been warned.</strong>
+            }
+            @case (3) {
+            <strong>You have failed!</strong>
+            }
+            @default {
+            <strong>No test result found...</strong>
+            }
+            }
+        </div>
+    </div>
+    <div class="col-4">
+
+    </div>
+
+</div>

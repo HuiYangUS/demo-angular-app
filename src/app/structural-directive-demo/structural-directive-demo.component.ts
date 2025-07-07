@@ -70,4 +70,12 @@ export class StructuralDirectiveDemoComponent {
 
   emptyList: string[] = [];
 
+  switchFuncText: string = "@switch()";
+
+  targetScore: number = 0;
+
+  setScore(score: number) {
+    this.targetScore = score;
+  }
+
 }
