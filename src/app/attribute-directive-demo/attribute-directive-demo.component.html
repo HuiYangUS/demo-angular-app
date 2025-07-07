@@ -1,0 +1,40 @@
+<div class="row text-center">
+    <div class="col-12 m-3">
+        <!-- ngClass is used to add/remove CSS classes -->
+        <!-- When a style is used repeatedly, its class value is stored in 'component.ts' for object reference -->
+        <b>Examples of Attribute Directive - ngClass</b>
+    </div>
+</div>
+
+<div class="row text-center">
+    <div class="col-3">
+        <h3 [ngClass]="targetTextColor">1st Demo of ngClass.</h3>
+        <!-- Break -->
+        <br>
+        <button (click)="changeColor('text-success')" type="button" class="btn btn-success m-2">Use This Color</button>
+        <button (click)="changeColor('text-danger')" type="button" class="btn btn-danger m-2">Use This Color</button>
+    </div>
+    <div class="col-3">
+        <h3 [ngClass]="isTextGreen?'text-success':'text-danger'">2nd Demo of ngClass.</h3>
+        <!-- Break -->
+        <br>
+        <input [(ngModel)]="isTextGreen" type="checkbox" name="" id=""> Change Color
+    </div>
+    <div class="col-3">
+        <h4>Demo of Checkbox using Data Binding & Directive</h4>
+        <input class="m-1" [(ngModel)]="isChecked" type="checkbox" name="" id=""> Do you want to submit your answers?
+        <div>
+            <button *ngIf="isChecked" type="button" class="btn btn-primary m-2">Submit</button>
+        </div>
+    </div>
+    <div class="col-3">
+        <h3 [ngClass]="userClass">3rd Demo of ngClass.</h3>
+        <input class="m-3" type="text" [(ngModel)]="userClass" placeholder="Ex: text-success">
+    </div>
+</div>
+
+<div class="row text-center">
+    <div class="col-12 m-3">
+        <b>Examples of Attribute Directive - ngStyle</b>
+    </div>
+</div>

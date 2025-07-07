@@ -4,6 +4,7 @@ import { UserComponent } from './user/user.component';
 import { DataBinderComponent } from './data-binder/data-binder.component';
 import { DirectiveDemoComponent } from './directive-demo/directive-demo.component';
 import { StructuralDirectiveDemoComponent } from './structural-directive-demo/structural-directive-demo.component';
+import { AttributeDirectiveDemoComponent } from './attribute-directive-demo/attribute-directive-demo.component';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,8 @@ import { StructuralDirectiveDemoComponent } from './structural-directive-demo/st
     // UserComponent,
     // DataBinderComponent,
     // DirectiveDemoComponent,
-    StructuralDirectiveDemoComponent
+    // StructuralDirectiveDemoComponent,
+    AttributeDirectiveDemoComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
