@@ -13,16 +13,34 @@ export class AttributeDirectiveDemoComponent {
   // 1
   targetTextColor: string = "text-dark";
 
-  changeColor(color: string) {
+  useColor(color: string) {
     this.targetTextColor = color;
+  }
+
+  targetStyleColor: string = "black";
+
+  updateColor(color: string) {
+    this.targetStyleColor = color;
   }
 
   // 2
   isTextGreen: boolean = false;
 
+  isTextOrange: boolean = false;
+
   isChecked: boolean = false;
 
   // 3
   userClass: string = "";
+
+  userStyle: string = "";
+
+  targetStyleObj: any = {
+    "color": "white",
+    "padding": "5px",
+    "background-color": "red",
+    "margin": "10px",
+    "border": "5px solid blue"
+  }
 
 }

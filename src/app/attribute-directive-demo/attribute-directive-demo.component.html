@@ -8,14 +8,14 @@
 
 <div class="row text-center">
     <div class="col-3">
-        <h3 [ngClass]="targetTextColor">1st Demo of ngClass.</h3>
+        <h3 [ngClass]="targetTextColor">1st Demo of ngClass</h3>
         <!-- Break -->
         <br>
-        <button (click)="changeColor('text-success')" type="button" class="btn btn-success m-2">Use This Color</button>
-        <button (click)="changeColor('text-danger')" type="button" class="btn btn-danger m-2">Use This Color</button>
+        <button (click)="useColor('text-success')" type="button" class="btn btn-success m-2">Use This Color</button>
+        <button (click)="useColor('text-danger')" type="button" class="btn btn-danger m-2">Use This Color</button>
     </div>
     <div class="col-3">
-        <h3 [ngClass]="isTextGreen?'text-success':'text-danger'">2nd Demo of ngClass.</h3>
+        <h3 [ngClass]="isTextGreen?'text-success':'text-danger'">2nd Demo of ngClass</h3>
         <!-- Break -->
         <br>
         <input [(ngModel)]="isTextGreen" type="checkbox" name="" id=""> Change Color
@@ -28,7 +28,7 @@
         </div>
     </div>
     <div class="col-3">
-        <h3 [ngClass]="userClass">3rd Demo of ngClass.</h3>
+        <h3 [ngClass]="userClass">3rd Demo of ngClass</h3>
         <input class="m-3" type="text" [(ngModel)]="userClass" placeholder="Ex: text-success">
     </div>
 </div>
@@ -36,5 +36,26 @@
 <div class="row text-center">
     <div class="col-12 m-3">
         <b>Examples of Attribute Directive - ngStyle</b>
+    </div>
+</div>
+
+<div class="row text-center pt-3">
+    <div class="col-4">
+        <h3 [ngStyle]="{'color': targetStyleColor}">1st Demo of ngStyle</h3>
+        <!-- Break -->
+        <br>
+        <button (click)="updateColor('orange')" type="button" class="btn btn-warning m-2">Change To This
+            Color</button>
+        <button (click)="updateColor('deepskyblue')" type="button" class="btn btn-info m-2">Change To This
+            Color</button>
+    </div>
+    <div class="col-4">
+        <h3 [ngStyle]="{'color': isTextOrange? 'orange':'black'}">2nd Demo of ngStyle</h3>
+        <!-- Break -->
+        <br>
+        <input [(ngModel)]="isTextOrange" type="checkbox" name="" id=""> Change Color
+    </div>
+    <div class="col-4">
+        <h3 [ngStyle]="targetStyleObj">3rd Demo of ngStyle</h3>
     </div>
 </div>
