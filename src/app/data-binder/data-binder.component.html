@@ -1,5 +1,5 @@
 <div align="center">
-    <h3>One Way Data Binder</h3>
+    <h3 class="m-3">One Way Data Binder</h3>
     <div>
         <p>1. Interpolation: embedded data as content within the element</p>
         <p><u>{{name}}</u>: {{title}}</p>
@@ -13,7 +13,7 @@
     <div>
         <p>3. Event binding: interactive element binds to an function</p>
         <input #targetInput type="text" [id]="id" placeholder="My Text">
-        <button (click)="onPlay(targetInput.value)">Play</button>
+        <button class="m-1" (click)="onPlay(targetInput.value)">Play</button>
         <div>
             <p></p>
             <!-- ($event) == event object -->
@@ -22,12 +22,12 @@
                 <option value="France">France</option>
                 <option value="China">China</option>
             </select>
-            <button (click)="onSubmit(targetSelect.value)">Submit</button>
+            <button class="m-1" (click)="onSubmit(targetSelect.value)">Submit</button>
         </div>
     </div>
-    <h3>Two Ways Data Binder</h3>
+    <h3 class="m-3">Two Ways Data Binder</h3>
     <div>
         <!-- [(ngModel)] synchronizes any change between client and component variable -->
-        <input type="text" placeholder="Change Me" [(ngModel)]="randomText">=> {{randomText}}
+        <input type="text" placeholder="Change Me" [(ngModel)]="randomText"> => {{randomText}}
     </div>
 </div>
