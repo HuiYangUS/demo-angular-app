@@ -5,6 +5,7 @@ import { StructuralDirectiveDemoComponent } from './structural-directive-demo/st
 import { AttributeDirectiveDemoComponent } from './attribute-directive-demo/attribute-directive-demo.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MyHomeComponent } from './my-home/my-home.component';
+import { LoginComponent } from './login/login.component';
 
 /**
  * <Route> is an object
@@ -13,7 +14,7 @@ export const routes: Routes = [
     // { path: "", component: UserComponent },
     { path: "", redirectTo: "home", pathMatch: "full" },
     { path: "home", component: MyHomeComponent },
-    { path: "user", component: UserComponent },
+    { path: "user", component: LoginComponent },
     { path: "data-binding", component: DataBinderComponent },
     { path: "structural-directive", component: StructuralDirectiveDemoComponent },
     { path: "attribute-directive", component: AttributeDirectiveDemoComponent },

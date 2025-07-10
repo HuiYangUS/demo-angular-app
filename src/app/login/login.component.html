@@ -1,0 +1,14 @@
+<div class="container d-flex justify-content-center mt-5" style="height: 100%;">
+    <div class="w-50 p-5 border border-primary text-center">
+        <h2 class="m-2 p-3 mb-2 bg-info-subtle text-info-emphasis">Login</h2>
+        <br>
+        <label class="m-1" for="username">Username :</label><input [(ngModel)]="username" type="text"
+            placeholder="Enter your username">
+        <br><br>
+        <label class="m-1" for="password">Password :</label><input [(ngModel)]="password" type="text"
+            placeholder="Enter your password">
+        <br><br>
+        <button type="button" class="btn btn-primary m-1" (click)="loginMyApp()">Login</button>
+        <button type="button" class="btn btn-outline-primary m-1" (click)="resetMyLogin()">Cancel</button>
+    </div>
+</div>
