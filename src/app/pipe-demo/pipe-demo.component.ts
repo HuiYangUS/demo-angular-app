@@ -4,12 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { of } from 'rxjs';
 
 @Component({
-  selector: 'app-built-in-pipes',
+  selector: 'app-pipe-demo',
   imports: [CommonModule, FormsModule],
-  templateUrl: './built-in-pipes.component.html',
-  styleUrl: './built-in-pipes.component.scss'
+  templateUrl: './pipe-demo.component.html',
+  styleUrl: './pipe-demo.component.scss'
 })
-export class BuiltInPipesComponent {
+export class PipeDemoComponent {
 
   // Use: 'component.html'
   ngPipeDef: string = "pipes are functions that are used to format data in angular templates";
