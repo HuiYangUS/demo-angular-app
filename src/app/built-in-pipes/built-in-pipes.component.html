@@ -1,12 +1,64 @@
 <div class="m-3">
-    <h2 class="text-primary m-3">Pipe on String type</h2>
-    <h4>Upper Case Pipe : {{ngPipeDef | uppercase}}</h4>
-    <h4>Lower Case Pipe : {{ngPipeDef | lowercase}}</h4>
-    <h4>Title Case Pipe : {{ngPipeDef | titlecase}}</h4>
-    <h4>Slice Pipe (5:25): {{ngPipeDef | slice:5:25}}</h4>
-    <h4>Slice Pipe (5): {{ngPipeDef | slice:5}}</h4>
-    <h4>Slice Pipe (5:-9): {{ngPipeDef | slice:5:-9}}</h4>
-    <h4>Slice Pipe (-9): {{ngPipeDef | slice:-9}}</h4>
-    <h4>Slice Pipe - Number Array (2): {{[1, 2, 3, 5, 9] | slice:2}}</h4>
+    <div>
+        <strong style="font-size: x-large;" align="center">Pipe Demo</strong>
+        <select [(ngModel)]="targetSelection" class="m-2" name="pipedemo" id="pipedemo-test">
+            @for (demoPipeOption of demoOptions; track $index) {
+            <option [value]="demoPipeOption">{{demoPipeOption}}</option>
+            }
+        </select>
+    </div>
+
+    <div>
+        @switch (targetSelection) {
+        @case ("String") {
+        <h2 class="section-title m-2">Pipe on String type</h2>
+        <h4>Upper Case Pipe : {{ngPipeDef | uppercase}}</h4>
+        <h4>Lower Case Pipe : {{ngPipeDef | lowercase}}</h4>
+        <h4>Title Case Pipe : {{ngPipeDef | titlecase}}</h4>
+        <h4>Slice Pipe (5:25): {{ngPipeDef | slice:5:25}}</h4>
+        <h4>Slice Pipe (5): {{ngPipeDef | slice:5}}</h4>
+        <h4>Slice Pipe (5:-9): {{ngPipeDef | slice:5:-9}}</h4>
+        <h4>Slice Pipe (-9): {{ngPipeDef | slice:-9}}</h4>
+        <h4>Slice Pipe - Number Array (2): {{[1, 2, 3, 5, 9] | slice:2}}</h4>
+        <h4>JSON Pipe : {{personData | json}}</h4>
+        <pre>{{personData | json}}</pre>
+        }
+        @case ("Number") {
+        <h2 class="section-title m-2">Pipe on Number type</h2>
+        <h4>Date : {{currentDate}}</h4>
+        <h4>Date Pipe : {{currentDate | date}}</h4>
+        <h4>Pipe Chain : {{currentDate | date | uppercase}}</h4>
+        <h4>Date (Short) Pipe : {{currentDate | date:"short"}}</h4>
+        <h4>Date (Short Date) Pipe : {{currentDate | date:"shortDate"}}</h4>
+        <h4>Date (Short Time) Pipe : {{currentDate | date:"shortTime"}}</h4>
+        <h4>Date (Medium) Pipe : {{currentDate | date:"medium"}}</h4>
+        <h4>Date (Medium Date) Pipe : {{currentDate | date:"mediumDate"}}</h4>
+        <h4>Date (Medium Time) Pipe : {{currentDate | date:"mediumTime"}}</h4>
+
+        <h4>Number Pipe : {{pie | number:".2"}}</h4>
+        <h4>Number Pipe : {{3.5555 | number:"2."}}</h4>
+
+        <h4>Percent Pipe : {{0.25 | percent}}</h4>
+        <h4>Currency Pipe : {{3.55 | currency}}</h4>
+        <h4>Currency Pipe : {{3.55 | currency:"EUR"}}</h4>
+        <!-- <h4>Currency Pipe : {{3.55 | currency:"CNY"}}</h4> -->
+        <h4>Currency Pipe : {{3.55 | currency:"JPY"}}</h4>
+        }
+        @case ("Raw Data") {
+        <h2 class="section-title m-2">Pipe on Data Mismatch</h2>
+        <h4 style="font-style: oblique;">Async Pipe :
+            <ol class="m-1">
+                @for (item of items | async; track $index) {
+                <li class="m-1">{{item}}</li>
+                }
+            </ol>
+        </h4>
+
+        }
+        @default {
+        <h6 style="font-family: Georgia, 'Times New Roman', Times, serif;" class="m-2">Please make a selection...</h6>
+        }
+        }
+    </div>
 
 </div>
