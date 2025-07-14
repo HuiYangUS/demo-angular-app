@@ -1,0 +1,16 @@
+.float-container {
+    display: flex;
+}
+
+.float-child {
+    flex: 1;
+    padding: 5px;
+}
+
+.target-label {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.display-values {
+    color: crimson;
+}

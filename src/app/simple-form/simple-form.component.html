@@ -1,0 +1,110 @@
+<div class="container">
+    <!-- #userFrom (local variable reference) -->
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+        <div style="font-family: Georgia, serif;" name="formTitle">
+            <h2 class="text-center m-3">New User Sign Up</h2>
+        </div>
+        <!-- <div class="m-1" style="color: crimson;" align="center">{{userObj.firstName}} - {{userObj.lastName}} -
+            {{userObj.email}} - {{userObj.password}}
+            - {{userObj.isChecked}}</div> -->
+        <pre class="display-values">Form Value: {{userForm.value | json}}</pre>
+        <pre class="display-values">Touched: {{userForm.touched}}</pre>
+        <pre class="display-values">Valid: {{userForm.valid}}</pre>
+        <pre class="display-values">Submitted: {{userForm.submitted}}</pre>
+
+        <div class="float-container" name="req-name">
+            <div class="float-child mb-3">
+                <label for="demoFirstName" class="form-label target-label">First Name</label>
+                <!-- [(ngModel)] can bind to component variable ONLY after 'name' attribute is set in 'ngForm' -->
+                <input #firstName="ngModel" (change)="trimFirstName()" required minlength="2" maxlength="15"
+                    pattern="^[a-zA-Z]+$" name="firstName" [(ngModel)]="userObj.firstName" type="text"
+                    class="form-control" id="demoFirstName" placeholder="Enter your first name">
+                <!-- Local variable needs to bind to 'ngModel' and when it is updated -->
+                @if (firstName?.dirty || firstName?.touched) {
+                @if (firstName?.errors?.["required"]) {
+                <small class="text-danger">First name is required</small>
+                }
+                @if (firstName?.errors?.["pattern"]) {
+                <small class="text-danger">First name must only contain characters</small>
+                } @else if (firstName?.errors?.["minlength"]) {
+                <small class="text-danger">First name needs to have at least 2 characters</small>
+                }
+                }
+            </div>
+            <div class="float-child mb-3">
+                <label for="demoLastName" class="form-label target-label">Last Name</label>
+                <input #lastName="ngModel" (change)="trimLastName()" required minlength="2" maxlength="15"
+                    pattern="^[a-zA-Z]+$" name="lastName" [(ngModel)]="userObj.lastName" type="text"
+                    class="form-control" id="demoLastName" placeholder="Enter your last name">
+                @if (lastName?.dirty || lastName?.touched) {
+                @if (lastName?.errors?.["required"]) {
+                <small class="text-danger">Last name is required</small>
+                }
+                @if (lastName?.errors?.["pattern"]) {
+                <small class="text-danger">Last name must only contain characters</small>
+                } @else if (lastName?.errors?.["minlength"]) {
+                <small class="text-danger">Last name needs to have at least 2 characters</small>
+                }
+                }
+            </div>
+        </div>
+        <div class="float-container" name="req-info">
+            <div class="float-child mb-3">
+                <label for="demoEmail" class="form-label target-label">Email Address</label>
+                <input #email="ngModel" required email name="email" [(ngModel)]="userObj.email" type="email"
+                    class="form-control" id="demoEmail" placeholder="Enter your email">
+                @if (email?.dirty || email?.touched) {
+                @if (email?.errors?.["required"]) {
+                <small class="text-danger">Email is required</small>
+                }
+                @if (email?.errors?.["email"]) {
+                <small class="text-danger">This email is not valid</small>
+                }
+                }
+            </div>
+            <div class="float-child mb-3">
+                <label for="demoPassword" class="form-label target-label">Password</label>
+                <input #password="ngModel" required minlength="6" pattern="^\S+$" name="password"
+                    [(ngModel)]="userObj.password" type="password" class="form-control" id="demoPassword"
+                    placeholder="Enter your password">
+                @if (password?.dirty || password?.touched) {
+                @if (password?.errors?.["required"]) {
+                <small class="text-danger">Password is required</small>
+                }
+                @if (password?.errors?.["pattern"]) {
+                <small class="text-danger">Password does not meet the requirements:</small>
+                <ul>
+                    <li class="text-danger"><small>Password can not contain empty space</small></li>
+                </ul>
+                } @else if (password?.errors?.["minlength"]) {
+                <small class="text-danger">Password does not meet the requirements:</small>
+                <ul>
+                    <li class="text-danger"><small>Password must be at least 6 characters</small></li>
+                </ul>
+                }
+                }
+            </div>
+        </div>
+        <div>
+            <div class="mb-3">
+                <label class="form-label target-label">Comments</label>
+                <input name="comments" [(ngModel)]="userObj.comments" type="text" class="form-control"
+                    placeholder="Anything you want to add">
+            </div>
+        </div>
+        <div class="float-container" name="terms">
+            <div style="margin-left: 25px;" class="float-child form-check mb-3">
+                <input required checked="userObj.isChecked" name="isChecked" [(ngModel)]="userObj.isChecked"
+                    type="checkbox" class="form-check-input" id="demoCheckUserForm">
+                <label class="form-check-label">Terms and Conditions</label>
+            </div>
+            <div align="right" class="float-child">
+                <button (click)="setTestValues(userForm)" class="btn btn-outline-warning m-1">Use Test Values</button>
+                <button (click)="patchTestValues(userForm)" class="btn btn-secondary m-1">Patch Test Values</button>
+                <button [disabled]="!userForm.valid" type="submit" class="btn btn-primary m-1">Submit</button>
+                <!-- <button (click)="resetUserFormX()" class="btn btn-danger m-1">Cancel</button> -->
+                <button (click)="resetUserFormY(userForm)" class="btn btn-danger m-1">Reset</button>
+            </div>
+        </div>
+    </form>
+</div>

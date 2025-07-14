@@ -7,6 +7,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { MyHomeComponent } from './my-home/my-home.component';
 import { LoginComponent } from './login/login.component';
 import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
+import { SimpleFormComponent } from './simple-form/simple-form.component';
 
 /**
  * <Route> is an object
@@ -20,6 +21,7 @@ export const routes: Routes = [
     { path: "structural-directive", component: StructuralDirectiveDemoComponent },
     { path: "attribute-directive", component: AttributeDirectiveDemoComponent },
     { path: "pipes", component: PipeDemoComponent },
+    { path: "simple-form", component: SimpleFormComponent },
     /**
      * Wild card must be the last component
      */
