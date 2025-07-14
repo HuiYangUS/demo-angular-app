@@ -8,6 +8,7 @@ import { MyHomeComponent } from './my-home/my-home.component';
 import { LoginComponent } from './login/login.component';
 import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
 import { SimpleFormComponent } from './simple-form/simple-form.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 /**
  * <Route> is an object
@@ -22,6 +23,7 @@ export const routes: Routes = [
     { path: "attribute-directive", component: AttributeDirectiveDemoComponent },
     { path: "pipes", component: PipeDemoComponent },
     { path: "simple-form", component: SimpleFormComponent },
+    { path: "reactive-form", component: ReactiveFormComponent },
     /**
      * Wild card must be the last component
      */
