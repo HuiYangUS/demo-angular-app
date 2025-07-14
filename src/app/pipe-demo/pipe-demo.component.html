@@ -3,14 +3,14 @@
         <strong style="font-size: x-large;" align="center">Pipe Demo</strong>
         <select [(ngModel)]="targetSelection" class="m-2" name="pipedemo" id="pipedemo-test">
             @for (demoPipeOption of demoOptions; track $index) {
-            <option [value]="demoPipeOption">{{demoPipeOption}}</option>
+            <option [value]="demoPipeOption">{{demoPipeOption | titlecase}}</option>
             }
         </select>
     </div>
 
     <div>
         @switch (targetSelection) {
-        @case ("String") {
+        @case ("string") {
         <h2 class="section-title m-2">Pipe on String type</h2>
         <h4>Upper Case Pipe : {{ngPipeDef | uppercase}}</h4>
         <h4>Lower Case Pipe : {{ngPipeDef | lowercase}}</h4>
@@ -23,7 +23,7 @@
         <h4>JSON Pipe : {{personData | json}}</h4>
         <pre>{{personData | json}}</pre>
         }
-        @case ("Number") {
+        @case ("number") {
         <h2 class="section-title m-2">Pipe on Number type</h2>
         <h4>Date : {{currentDate}}</h4>
         <h4>Date Pipe : {{currentDate | date}}</h4>
@@ -44,7 +44,7 @@
         <!-- <h4>Currency Pipe : {{3.55 | currency:"CNY"}}</h4> -->
         <h4>Currency Pipe : {{3.55 | currency:"JPY"}}</h4>
         }
-        @case ("Raw Data") {
+        @case ("raw data") {
         <h2 class="section-title m-2">Pipe on Data Mismatch</h2>
         <h4 style="font-style: oblique;">Async Pipe :
             <ol class="m-1">
@@ -53,6 +53,17 @@
                 }
             </ol>
         </h4>
+        }
+        @case ("custom") {
+        <h2 class="section-title m-2">Custom Pipe on Test Data</h2>
+        <!-- <h4>Phone Number : {{phoneNumber}}</h4>
+        <h4>Phone Number with Country Code : {{phoneNumber | countryCode}}</h4>
+        <h4>Phone Number with Country Code : {{"" | countryCode}}</h4>
+        <h4>Phone Number with Country Code : {{" " | countryCode}}</h4>
+        <h4>Phone Number with Country Code (undefined): {{undefined | countryCode}}</h4>
+        <h4>Phone Number with Country Code (null): {{null | countryCode}}</h4> -->
+        <h4>Date : {{currentDate}}</h4>
+        <h4>Custom Date Pipe : {{currentDate | customDate}}</h4>
 
         }
         @default {

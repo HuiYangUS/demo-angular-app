@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { of } from 'rxjs';
+import { MyPipePipe } from '../my-pipe.pipe';
 
 @Component({
   selector: 'app-pipe-demo',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, MyPipePipe],
   templateUrl: './pipe-demo.component.html',
   styleUrl: './pipe-demo.component.scss'
 })
@@ -27,8 +28,10 @@ export class PipeDemoComponent {
 
   items = of(["Apple", "Peach", "Mango"]);
 
-  demoOptions = ["String", "Number", "Raw Data"];
+  demoOptions = ["string", "number", "raw data", "custom"];
 
   targetSelection = "";
+
+  phoneNumber: any = 3336669999;
 
 }
