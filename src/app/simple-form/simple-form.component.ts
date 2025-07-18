@@ -51,6 +51,10 @@ export class SimpleFormComponent implements OnInit {
     userForm.control.patchValue(testDataObj);
   }
 
+  /**
+   * Data from 'NgForm' pass to server (API)
+   * @param userForm 
+   */
   onSubmit(userForm: NgForm) {
     console.log(userForm.value);
   }

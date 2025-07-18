@@ -1,5 +1,6 @@
 <div class="container">
-    <!-- #userFrom (local variable reference) -->
+    <!-- Template Driven Form is static and is imported in its entirety  -->
+    <!-- #userFrom (local variable reference) and maps to 'ngForm' -->
     <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
         <div style="font-family: Georgia, serif;" name="formTitle">
             <h2 class="text-center m-3">New User Sign Up</h2>
