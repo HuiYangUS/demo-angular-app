@@ -1,0 +1,12 @@
+<div class="m-3">
+    @if (isUserAdmin) {
+    <strong style="color: red;">Access Level : Administrator</strong>
+    }
+    <!-- Unsorted List -->
+    <ul>
+        <li>ID : {{userProfile.id}}</li>
+        <li>Name : {{userProfile.name}}</li>
+        <li>Username : {{userProfile.username}}</li>
+        <li>Email : {{userProfile.email}}</li>
+    </ul>
+</div>

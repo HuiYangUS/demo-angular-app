@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { DataBankService } from '../data-bank.service';
 
 @Component({
   selector: 'app-data-binder',
@@ -8,6 +9,17 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './data-binder.component.scss'
 })
 export class DataBinderComponent {
+
+  userProfile: any;
+
+  /**
+   * Constructor injection
+   * @param _dataBank 
+   */
+  constructor(private _dataBank: DataBankService) {
+    this.userProfile = _dataBank.userData;
+  }
+
   /**
    * Create variables
    * and then insert them as visible content in 'html'
