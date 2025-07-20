@@ -10,3 +10,28 @@
         <li>Email : {{userProfile.email}}</li>
     </ul>
 </div>
+
+<div align="center" class="m-3">
+    <h3 style="background-color: aquamarine; display: inline-block; border-radius: 5px; color: forestgreen; padding: 5px;">Data from API</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr id="targetHeaderRow">
+                <th>User ID</th>
+                <th>User Name</th>
+                <th>User Email</th>
+                <th>Company</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (user of usersResponseDemoAPI; track user) {
+            <tr id="dataValueRow">
+                <!-- Table Data -->
+                <td>{{user.id}}</td>
+                <td>{{user.name }}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.company.name}}</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
