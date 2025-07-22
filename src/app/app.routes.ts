@@ -13,6 +13,7 @@ import { CRUDComponent } from './crud/crud.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { ViewUserComponent } from './view-user/view-user.component';
+import { ResourceApiComponent } from './resource-api/resource-api.component';
 
 /**
  * <Route> is an object
@@ -33,6 +34,7 @@ export const routes: Routes = [
     { path: "add-user", component: AddUserComponent },
     { path: "view-user/:id", component: ViewUserComponent },
     { path: "update-user/:id", component: UpdateUserComponent },
+    { path: "resource-api", component: ResourceApiComponent },
     /**
      * Wild card must be the last component
      */

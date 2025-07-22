@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { DemoApiService } from '../demo-api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { IUser } from '../i-user';
+import { IUser } from '../domain/i-user';
 import { last } from 'rxjs';
+import { DemoApiService } from '../services/demo-api.service';
 
 @Component({
   selector: 'app-update-user',

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { DemoApiService } from '../demo-api.service';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DemoApiService } from '../services/demo-api.service';
 
 @Component({
   selector: 'app-view-user',

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DemoApiService } from '../demo-api.service';
-import { IUser } from '../i-user';
+import { IUser } from '../domain/i-user';
 import { Router } from '@angular/router';
+import { DemoApiService } from '../services/demo-api.service';
 
 @Component({
   selector: 'app-crud',

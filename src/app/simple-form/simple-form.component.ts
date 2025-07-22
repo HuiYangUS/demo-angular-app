@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { User } from '../user';
 import { CommonModule } from '@angular/common';
+import { User } from '../domain/user';
 
 /**
  * Template Driven Form

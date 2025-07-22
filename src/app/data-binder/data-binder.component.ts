@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { DataBankService } from '../data-bank.service';
+import { DataBankService } from '../services/data-bank.service';
 
 @Component({
   selector: 'app-data-binder',

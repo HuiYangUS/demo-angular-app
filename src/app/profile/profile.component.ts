@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { userInfo } from 'node:os';
-import { DataBankService } from '../data-bank.service';
+import { DataBankService } from '../services/data-bank.service';
 
 @Component({
   selector: 'app-profile',
