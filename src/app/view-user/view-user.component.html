@@ -1,0 +1,31 @@
+<div class="container">
+    <form [formGroup]="viewUserForm" class="mt-5 p-5 mx-auto bg-info">
+        <h2 class="text-center m-2">View User</h2>
+        <div class="row g-3 m-3">
+            <div class="col">
+                <label for="firstName" class="form-label">First Name</label>
+                <input formControlName="firstName" type="text" class="form-control" placeholder="First name">
+            </div>
+            <div class="col">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input formControlName="lastName" type="text" class="form-control" placeholder="Last name">
+            </div>
+        </div>
+
+        <div class="row g-3 m-3">
+            <div class="col">
+                <label for="username" class="form-label">Username</label>
+                <input formControlName="username" type="text" class="form-control" placeholder="Enter your username">
+            </div>
+            <div class="col">
+                <label for="email" class="form-label">Email</label>
+                <input formControlName="email" type="text" class="form-control" placeholder="Enter your email">
+            </div>
+        </div>
+        <div align="right" class="m-3">
+            <button (click)="onEdit()" type="button" class="btn btn-outline-success m-2">Edit</button>
+            <button (click)="onCancel()" type="button" class="btn btn-outline-danger m-2">Close</button>
+        </div>
+
+    </form>
+</div>

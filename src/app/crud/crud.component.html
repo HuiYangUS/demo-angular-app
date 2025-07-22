@@ -1,0 +1,33 @@
+<div class="container">
+    <h2 class="text-center m-3">CRUD Operations</h2>
+    <table class="table table-secondary table-striped-columns">
+        <thead>
+            <tr align="center" class="table-info">
+                <th>ID</th>
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody class="table-group-divider">
+            @for (user of apiData; track user) {
+            <tr>
+                <td>{{user.id}}</td>
+                <td>{{user.firstName}} {{user.lastName}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+                <td align="center">
+                    <button (click)="onView(user.id)" type="button" class="btn btn-secondary m-2">View</button>
+                    <button (click)="onUpdate(user.id)" type="button" class="btn btn-success m-2">Update</button>
+                    <button (click)="onDelete(user.id)" type="button" class="btn btn-danger m-2">Delete</button>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+    <div align="right">
+        <button (click)="addUser()" type="button" class="btn btn-info m-2">Add New User</button>
+    </div>
+</div>

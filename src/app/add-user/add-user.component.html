@@ -1,0 +1,34 @@
+<div class="container">
+    <form [formGroup]="addUserForm" class="mt-5 p-5 mx-auto bg-info" (ngSubmit)="onSubmit()">
+        <h2 class="text-center m-2">New User</h2>
+        <!-- Using Grid -->
+        <div class="row g-3 m-3">
+            <div class="col">
+                <label for="firstName" class="form-label">First Name</label>
+                <input formControlName="firstName" type="text" class="form-control" placeholder="First name">
+            </div>
+            <div class="col">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input formControlName="lastName" type="text" class="form-control" placeholder="Last name">
+            </div>
+        </div>
+
+        <div class="row g-3 m-3">
+            <div class="col">
+                <label for="username" class="form-label">Username</label>
+                <input formControlName="username" type="text" class="form-control" placeholder="Enter your username">
+            </div>
+            <div class="col">
+                <label for="email" class="form-label">Email</label>
+                <input formControlName="email" type="text" class="form-control" placeholder="Enter your email">
+            </div>
+        </div>
+        <div align="right" class="m-3">
+            <button [disabled]="addUserForm.invalid" (click)="onSubmit()" type="button"
+                class="btn btn-outline-dark m-2">Submit</button>
+            <button (click)="onReset()" type="button" class="btn btn-outline-light m-2">Reset</button>
+            <button (click)="onCancel()" type="button" class="btn btn-outline-danger m-2">Cancel</button>
+        </div>
+
+    </form>
+</div>

@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { UserComponent } from './user/user.component';
 import { DataBinderComponent } from './data-binder/data-binder.component';
 import { StructuralDirectiveDemoComponent } from './structural-directive-demo/structural-directive-demo.component';
 import { AttributeDirectiveDemoComponent } from './attribute-directive-demo/attribute-directive-demo.component';
@@ -10,6 +9,10 @@ import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
 import { SimpleFormComponent } from './simple-form/simple-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ProfileComponent } from './profile/profile.component';
+import { CRUDComponent } from './crud/crud.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
+import { ViewUserComponent } from './view-user/view-user.component';
 
 /**
  * <Route> is an object
@@ -26,6 +29,10 @@ export const routes: Routes = [
     { path: "pipes", component: PipeDemoComponent },
     { path: "simple-form", component: SimpleFormComponent },
     { path: "reactive-form", component: ReactiveFormComponent },
+    { path: "crud", component: CRUDComponent },
+    { path: "add-user", component: AddUserComponent },
+    { path: "view-user/:id", component: ViewUserComponent },
+    { path: "update-user/:id", component: UpdateUserComponent },
     /**
      * Wild card must be the last component
      */

@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": 101,
+      "firstName": "John",
+      "lastName": "Smith",
+      "username": "SMI8THM",
+      "email": "john.smith@test.com"
+    },
+    {
+      "id": 102,
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "username": "JAN6QOE",
+      "email": "jane.doe@demo.com"
+    },
+    {
+      "id": 103,
+      "firstName": "Hui",
+      "lastName": "Yang",
+      "username": "HOY7YAG",
+      "email": "hui.yang@test.com"
+    },
+    {
+      "firstName": "Hui",
+      "lastName": "Yang",
+      "username": "TEST3",
+      "email": "mysthyang@outlook.com",
+      "id": 104
+    }
+  ]
+}
