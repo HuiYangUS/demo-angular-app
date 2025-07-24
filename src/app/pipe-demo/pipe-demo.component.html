@@ -1,7 +1,7 @@
 <div class="m-3">
     <div>
         <strong style="font-size: x-large;" align="center">Pipe Demo</strong>
-        <select [(ngModel)]="targetSelection" class="m-2" name="pipedemo" id="pipedemo-test">
+        <select [(ngModel)]="targetSelection" class="btn btn-info m-2" name="pipedemo" id="pipedemo-test">
             @for (demoPipeOption of demoOptions; track $index) {
             <option [value]="demoPipeOption">{{demoPipeOption | titlecase}}</option>
             }

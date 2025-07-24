@@ -1,0 +1,37 @@
+<div class="m-3">
+    <h2>Tabs Test</h2>
+    <ul name="testTabList" class="nav nav-tabs">
+        <li (click)="selectTab('Dashboard')" class="nav-item">
+            <a class="nav-link active" data-bs-toggle="tab">Dashboard</a>
+        </li>
+        <li (click)="selectTab('Forms')" class="nav-item">
+            <!-- <span class="nav-header">User</span> -->
+            <a class="nav-link" data-bs-toggle="tab">Forms</a>
+        </li>
+        <li (click)="selectTab('Dialog')" class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab">Dialogs</a>
+        </li>
+    </ul>
+</div>
+<div>
+    <!-- <h4 class="m-2">{{currentTab}}</h4> -->
+    <div>
+        @switch (currentTab) {
+        @case ("Forms") {
+        <app-reactive-form [testMessageReactiveForm]="testFormMessageX2"></app-reactive-form>
+        }
+        @case ("Dialog") {
+        <button type="button" class="btn btn-danger m-3" data-bs-toggle="modal" data-bs-target="#deleteModal">
+            Delete
+        </button>
+        <app-delete-confirm (dataEmitter)="receiveDeleteInfo($event)" #deleteModal></app-delete-confirm>
+        <div class="m-3">
+            Result: {{deleteMessage}}
+        </div>
+        }
+        @default {
+        <p class="m-3">No results!</p>
+        }
+        }
+    </div>
+</div>

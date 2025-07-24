@@ -1,3 +1,18 @@
 .active {
     font-weight: bold;
 }
+
+// Active
+.dropdown-item.active {
+    background-color: navy !important;
+    font-style: italic;
+}
+
+// Click
+// .nav-item.dropdown .dropdown-item:active {
+//     background-color: green !important;
+// }
+
+.nav-item.dropdown .dropdown-item:hover {
+    background-color: grey !important;
+}

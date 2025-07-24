@@ -2,16 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { IUser } from '../domain/i-user';
 import { Router } from '@angular/router';
 import { DemoApiService } from '../services/demo-api.service';
+import { DeleteConfirmComponent } from '../com/delete-confirm/delete-confirm.component';
 
 @Component({
   selector: 'app-crud',
-  imports: [],
+  imports: [DeleteConfirmComponent],
   templateUrl: './crud.component.html',
   styleUrl: './crud.component.scss'
 })
 export class CRUDComponent implements OnInit {
 
   apiData: IUser[] = [];
+
+  useThisID: number = 0;
 
   constructor(private apiService: DemoApiService, private router: Router) { }
 
@@ -36,9 +39,15 @@ export class CRUDComponent implements OnInit {
   }
 
   onDelete(id: number) {
-    this.apiService.deleteDataByID(id).subscribe(result => {
-      this.getAllData();
-    });
+    this.useThisID = id;
+  }
+
+  receiveDeleteInfo(deleteInfo: boolean) {
+    if (deleteInfo) {
+      this.apiService.deleteDataByID(this.useThisID).subscribe(result => {
+        this.getAllData();
+      });
+    }
   }
 
 }

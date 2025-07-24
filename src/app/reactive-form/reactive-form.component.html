@@ -1,6 +1,9 @@
 <!-- <div align="center">
     <strong style="font-size: xx-large;" class="section-title m-3">Reactive Forms</strong>
 </div> -->
+<div>
+    <app-reusable [displayMessage]="testMessageReactiveForm"></app-reusable>
+</div>
 <div class="container">
     <form [formGroup]="reactiveUserForm" (ngSubmit)="onSubmit()">
         <div style="font-family: Georgia, serif;" name="formTitle">

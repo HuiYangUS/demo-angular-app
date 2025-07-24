@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ReusableComponent } from '../reusable/reusable.component';
 
 /**
  * Reactive Form is dynamic and can be easily manipulated
@@ -9,11 +10,14 @@ import { FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Va
  */
 @Component({
   selector: 'app-reactive-form',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, ReusableComponent],
   templateUrl: './reactive-form.component.html',
   styleUrl: './reactive-form.component.scss'
 })
 export class ReactiveFormComponent {
+
+  @Input()
+  testMessageReactiveForm: string = "Testing Reactive Form";
 
   reactiveUserForm: FormGroup;
 

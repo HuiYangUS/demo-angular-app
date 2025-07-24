@@ -14,6 +14,8 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { ResourceApiComponent } from './resource-api/resource-api.component';
+import { ReusableComponent } from './reusable/reusable.component';
+import { TestComponent } from './tests/test/test.component';
 
 /**
  * <Route> is an object
@@ -35,6 +37,7 @@ export const routes: Routes = [
     { path: "view-user/:id", component: ViewUserComponent },
     { path: "update-user/:id", component: UpdateUserComponent },
     { path: "resource-api", component: ResourceApiComponent },
+    { path: "test", component: TestComponent },
     /**
      * Wild card must be the last component
      */
