@@ -22,7 +22,8 @@
                     <button (click)="onUpdate(user.id)" type="button" class="btn btn-success m-2">Update</button>
                     <button (click)="onDelete(user.id)" data-bs-toggle="modal" data-bs-target="#deleteModal"
                         type="button" class="btn btn-danger m-2">Delete</button>
-                    <app-delete-confirm (dataEmitter)="receiveDeleteInfo($event)" #deleteModal></app-delete-confirm>
+                    <app-delete-confirm (deleteConfirmValue)="receiveDeleteInfo($event)"
+                        #deleteModal></app-delete-confirm>
                 </td>
             </tr>
             }

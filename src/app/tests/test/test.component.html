@@ -21,12 +21,26 @@
         <app-reactive-form [testMessageReactiveForm]="testFormMessageX2"></app-reactive-form>
         }
         @case ("Dialog") {
-        <button type="button" class="btn btn-danger m-3" data-bs-toggle="modal" data-bs-target="#deleteModal">
-            Delete
-        </button>
-        <app-delete-confirm (dataEmitter)="receiveDeleteInfo($event)" #deleteModal></app-delete-confirm>
-        <div class="m-3">
-            Result: {{deleteMessage}}
+        <div class="dialog-child" name="useDataEmitter">
+            <button type="button" class="btn btn-danger m-3" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                Delete
+            </button>
+            <app-delete-confirm (deleteConfirmValue)="receiveDeleteInfo($event)" #deleteModal></app-delete-confirm>
+            <div class="m-3">
+                Result: {{deleteMessage}}
+            </div>
+        </div>
+        <div class="dialog-child" name="useDataService">
+            <button type="button" class="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#testConfirmModal">
+                Submit
+            </button>
+            <button (click)="useDialogService()" type="button" class="btn btn-warning m-3">
+                Use Dialog Service
+            </button>
+            <app-test-confirm #testConfirmModal></app-test-confirm>
+            <div class="m-3">
+                Result: {{testMessage}}
+            </div>
         </div>
         }
         @default {

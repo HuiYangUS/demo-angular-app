@@ -9,12 +9,12 @@ import { DataBankService } from '../../services/data-bank.service';
 })
 export class DeleteConfirmComponent {
 
-  @Output() dataEmitter = new EventEmitter<boolean>();
+  @Output() deleteConfirmValue = new EventEmitter<boolean>();
 
   constructor(private dataBank: DataBankService) { }
 
   onDelete(value: boolean) {
-    this.dataEmitter.emit(value);
+    this.deleteConfirmValue.emit(value);
   }
 
 }

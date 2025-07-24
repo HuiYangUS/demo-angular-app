@@ -3,7 +3,8 @@ import { ReactiveFormComponent } from '../../reactive-form/reactive-form.compone
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { DeleteConfirmComponent } from '../../com/delete-confirm/delete-confirm.component';
-import { DataBankService } from '../../services/data-bank.service';
+import { TestConfirmComponent } from '../../com/test-confirm/test-confirm.component';
+import { DialogService } from '../../services/dialog.service';
 
 @Component({
   selector: 'app-test',
@@ -11,7 +12,8 @@ import { DataBankService } from '../../services/data-bank.service';
     ReactiveFormComponent,
     CommonModule,
     FormsModule,
-    DeleteConfirmComponent
+    DeleteConfirmComponent,
+    TestConfirmComponent
   ],
   templateUrl: './test.component.html',
   styleUrl: './test.component.scss'
@@ -22,7 +24,25 @@ export class TestComponent {
 
   deleteMessage: string = "";
 
-  constructor(private dataBank: DataBankService) {
+  testConfirmValue: boolean;
+  testMessage: string = "";
+
+  constructor(private dialogService: DialogService) {
+    this.testConfirmValue = dialogService.testConfirm;
+  }
+
+
+  useDialogService() {
+    this.testConfirmValue = this.dialogService.testConfirm;
+    this.testMessage = this.changeTestMessage();
+  }
+
+  changeTestMessage() {
+    if (this.testConfirmValue) {
+      return "I had been confirmed."
+    } else {
+      return "I have been rejected."
+    }
   }
 
   receiveDeleteInfo(deleteInfo: boolean) {
