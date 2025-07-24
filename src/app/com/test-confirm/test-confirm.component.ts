@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { DialogService } from '../../services/dialog.service';
 
 @Component({
@@ -9,6 +9,8 @@ import { DialogService } from '../../services/dialog.service';
 })
 export class TestConfirmComponent {
 
+  @Input()
+  childMessage: string = "";
 
   constructor(private dialogService: DialogService) { }
 

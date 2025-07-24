@@ -7,13 +7,13 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <p>Testing using Data service...</p>
+                <p>Message from Parent : {{childMessage}}</p>
             </div>
             <div class="modal-footer bg-info">
-                <button (click)="sendConfirmValue(true)" type="button" class="btn btn-primary"
-                    data-bs-dismiss="modal">Yes</button>
+                <!-- <button (click)="sendConfirmValue(true)" type="button" class="btn btn-primary"
+                    data-bs-dismiss="modal">Yes</button> -->
                 <button (click)="sendConfirmValue(false)" type="button" class="btn btn-secondary"
-                    data-bs-dismiss="modal">No</button>
+                    data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

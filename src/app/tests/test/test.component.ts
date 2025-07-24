@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { ReactiveFormComponent } from '../../reactive-form/reactive-form.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -24,6 +24,14 @@ export class TestComponent {
 
   deleteMessage: string = "";
 
+  parentMessage: string = ""
+
+  @ViewChild('testInput')
+  testInput!: ElementRef<HTMLInputElement>;
+
+  @ViewChild('testButton')
+  testButton!: ElementRef<HTMLButtonElement>;
+
   testConfirmValue: boolean;
   testMessage: string = "";
 
@@ -31,6 +39,23 @@ export class TestComponent {
     this.testConfirmValue = dialogService.testConfirm;
   }
 
+  /**
+   * Press 'Enter' to open a dialog
+   * @param keyboard 
+   */
+  onKeyPress(keyboard: KeyboardEvent) {
+    if (keyboard.key == "Enter") {
+      console.log(this.testInput.nativeElement.value)
+      console.log("You have entered the correct key.");
+      this.testButton.nativeElement.click();
+    }
+  }
+
+  updateParentMessage() {
+    if (this.parentMessage.trim().length == 0) {
+      this.parentMessage = "I have no parents."
+    }
+  }
 
   useDialogService() {
     this.testConfirmValue = this.dialogService.testConfirm;

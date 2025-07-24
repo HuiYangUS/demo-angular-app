@@ -21,7 +21,7 @@
         <app-reactive-form [testMessageReactiveForm]="testFormMessageX2"></app-reactive-form>
         }
         @case ("Dialog") {
-        <div class="dialog-child" name="useDataEmitter">
+        <div style="margin-right: 10px;" class="dialog-child" name="useDataEmitter">
             <button type="button" class="btn btn-danger m-3" data-bs-toggle="modal" data-bs-target="#deleteModal">
                 Delete
             </button>
@@ -30,17 +30,19 @@
                 Result: {{deleteMessage}}
             </div>
         </div>
-        <div class="dialog-child" name="useDataService">
-            <button type="button" class="btn btn-primary m-3" data-bs-toggle="modal" data-bs-target="#testConfirmModal">
-                Submit
-            </button>
-            <button (click)="useDialogService()" type="button" class="btn btn-warning m-3">
-                Use Dialog Service
-            </button>
-            <app-test-confirm #testConfirmModal></app-test-confirm>
-            <div class="m-3">
-                Result: {{testMessage}}
+        <div style="vertical-align: top;" class="dialog-child" name="useDataService">
+            <div>
+                <input #testInput (keypress)="onKeyPress($event)" [(ngModel)]="parentMessage" style="margin-right: 5px;"
+                    class="mb-0" type="text">
+                <button #testButton (click)="updateParentMessage()" type="button" class="btn btn-primary mb-1"
+                    data-bs-toggle="modal" data-bs-target="#testConfirmModal">
+                    Submit
+                </button>
             </div>
+            <app-test-confirm [childMessage]="parentMessage" #testConfirmModal></app-test-confirm>
+            <!-- <div class="m-3">
+                Result: {{parentMessage}}
+            </div> -->
         </div>
         }
         @default {
