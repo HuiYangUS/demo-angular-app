@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { ReactiveFormComponent } from '../../reactive-form/reactive-form.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -35,6 +35,8 @@ export class TestComponent {
   testConfirmValue: boolean;
   testMessage: string = "";
 
+  dialogDemoSelectLabel: string = "Select Dialog Demo";
+
   constructor(private dialogService: DialogService) {
     this.testConfirmValue = dialogService.testConfirm;
   }
@@ -49,6 +51,16 @@ export class TestComponent {
       console.log("You have entered the correct key.");
       this.testButton.nativeElement.click();
     }
+  }
+
+  selectDialogDemo(selectLabel: string) {
+    this.dialogDemoSelectLabel = selectLabel;
+  }
+
+  @HostListener('click', ['$event.target'])
+  onClickDialogDemo1(targetElement: HTMLElement) {
+    this.testMessage = "You have clicked."
+    console.log(targetElement)
   }
 
   updateParentMessage() {

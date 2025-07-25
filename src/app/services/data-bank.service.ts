@@ -8,14 +8,6 @@ export class DataBankService {
 
   DEMO_API_URL = 'https://jsonplaceholder.typicode.com/users';
 
-  constructor(private _httpClient: HttpClient) {
-
-  }
-
-  getUsers() {
-    return this._httpClient.get(this.DEMO_API_URL);
-  }
-
   userData = {
     id: 101,
     name: 'Jane Doe',
@@ -23,6 +15,14 @@ export class DataBankService {
     email: 'demo@test.com',
     accessRefCode: 1
   };
+
+  clickCounter: number = 0;
+
+  constructor(private _httpClient: HttpClient) { }
+
+  getUsers() {
+    return this._httpClient.get(this.DEMO_API_URL);
+  }
 
   isUserAdmin(): boolean {
     return this.userData.accessRefCode == 0;

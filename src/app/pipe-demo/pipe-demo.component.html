@@ -1,12 +1,21 @@
 <div class="m-3">
     <div>
         <strong style="font-size: x-large;" align="center">Pipe Demo</strong>
-        <select [(ngModel)]="targetSelection" class="btn btn-info m-2" name="pipedemo" id="pipedemo-test">
+        <br>
+        <select class="m-2 my-select" [(ngModel)]="targetSelection" name="pipedemo" id="pipedemo-test" size="3">
             @for (demoPipeOption of demoOptions; track $index) {
-            <option [value]="demoPipeOption">{{demoPipeOption | titlecase}}</option>
+            <option type="button" class="dropdown-item" [value]="demoPipeOption">{{demoPipeOption | titlecase}}</option>
             }
         </select>
     </div>
+    <!-- <div id="test-select-container">
+        <select name="test-select" id="test-select" size="2">
+            <option value="test-option-1">Apple</option>
+            <option value="test-option-2">Peach</option>
+            <option value="test-option-3">Orange</option>
+            <option value="test-option-4">Kiwi</option>
+        </select>
+    </div> -->
 
     <div>
         @switch (targetSelection) {

@@ -16,6 +16,7 @@ import { ViewUserComponent } from './view-user/view-user.component';
 import { ResourceApiComponent } from './resource-api/resource-api.component';
 import { ReusableComponent } from './reusable/reusable.component';
 import { TestComponent } from './tests/test/test.component';
+import { DirectiveDemoComponent } from './directive-demo/directive-demo.component';
 
 /**
  * <Route> is an object
@@ -29,6 +30,7 @@ export const routes: Routes = [
     { path: "data-binding", component: DataBinderComponent },
     { path: "structural-directive", component: StructuralDirectiveDemoComponent },
     { path: "attribute-directive", component: AttributeDirectiveDemoComponent },
+    { path: "custom-directive", component: DirectiveDemoComponent },
     { path: "pipes", component: PipeDemoComponent },
     { path: "simple-form", component: SimpleFormComponent },
     { path: "reactive-form", component: ReactiveFormComponent },

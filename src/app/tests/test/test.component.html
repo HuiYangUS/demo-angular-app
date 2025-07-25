@@ -1,5 +1,6 @@
 <div class="m-3">
     <h2>Tabs Test</h2>
+    <p class="m-1">{{testMessage}}</p>
     <ul name="testTabList" class="nav nav-tabs">
         <li (click)="selectTab('Dashboard')" class="nav-item">
             <a class="nav-link active" data-bs-toggle="tab">Dashboard</a>
@@ -14,23 +15,44 @@
     </ul>
 </div>
 <div>
-    <!-- <h4 class="m-2">{{currentTab}}</h4> -->
     <div>
         @switch (currentTab) {
+
+        @case ("Dashboard") {
+        <button type="button" class="btn btn-success m-3">Click Me</button>
+        }
         @case ("Forms") {
         <app-reactive-form [testMessageReactiveForm]="testFormMessageX2"></app-reactive-form>
         }
         @case ("Dialog") {
-        <div style="margin-right: 10px;" class="dialog-child" name="useDataEmitter">
-            <button type="button" class="btn btn-danger m-3" data-bs-toggle="modal" data-bs-target="#deleteModal">
-                Delete
-            </button>
-            <app-delete-confirm (deleteConfirmValue)="receiveDeleteInfo($event)" #deleteModal></app-delete-confirm>
-            <div class="m-3">
-                Result: {{deleteMessage}}
+        <div id="dialogDropdown" class="dropdown m-3">
+            <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">{{dialogDemoSelectLabel}}</button>
+            <ul class="dropdown-menu">
+                <li><button (click)="selectDialogDemo('Delete Dialog')" class="dropdown-item" type="button">Delete
+                        Dialog</button></li>
+                <li><button (click)="selectDialogDemo('Parent-Child Dialog')" class="dropdown-item"
+                        type="button">Parent-Child
+                        Dialog</button></li>
+            </ul>
+        </div>
+        @switch (dialogDemoSelectLabel) {
+
+        @case ("Delete Dialog") {
+        <div>
+            <h3 class="m-3">Delete Dialog</h3>
+            <div class="m-2" name="useDataEmitter">
+                <button type="button" class="btn btn-danger m-3" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                    Delete
+                </button>
+                <app-delete-confirm (deleteConfirmValue)="receiveDeleteInfo($event)" #deleteModal></app-delete-confirm>
+                <p class="m-3">Result: {{deleteMessage}}</p>
             </div>
         </div>
-        <div style="vertical-align: top;" class="dialog-child" name="useDataService">
+        }
+        @case ("Parent-Child Dialog") {
+        <h3 class="m-2">Parent-Child Dialog</h3>
+        <div style="margin-left: 10px; margin-top: 15px;" name="useDataService">
             <div>
                 <input #testInput (keypress)="onKeyPress($event)" [(ngModel)]="parentMessage" style="margin-right: 5px;"
                     class="mb-0" type="text">
@@ -40,14 +62,16 @@
                 </button>
             </div>
             <app-test-confirm [childMessage]="parentMessage" #testConfirmModal></app-test-confirm>
-            <!-- <div class="m-3">
-                Result: {{parentMessage}}
-            </div> -->
         </div>
         }
         @default {
         <p class="m-3">No results!</p>
         }
+        <!-- Dialog Selection -->
+        }
+        <!-- Tab Selection -->
+        }
+
         }
     </div>
 </div>

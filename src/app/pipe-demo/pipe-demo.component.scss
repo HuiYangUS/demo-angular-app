@@ -1,7 +1,26 @@
 .section-title {
-    background-color: aqua;
+    background-color: teal;
     display: inline-block;
     border-radius: 10px;
-    color: violet;
-    padding: 5px;
+    color: silver;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.my-select {
+    padding: 3px;
+    border: 1px solid black;
+    border-radius: 6px;
+    background-color: aquamarine;
+    text-align: center;
+}
+
+.my-select::-webkit-scrollbar {
+    background-color: silver;
+}
+
+
+.my-select::-webkit-scrollbar-thumb {
+    background-color: teal;
+    border-radius: 6px;
 }
