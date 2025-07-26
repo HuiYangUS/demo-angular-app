@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-storage',
@@ -11,6 +12,12 @@ export class StorageComponent {
   targetValue: any = "";
 
   localValue: any = "";
+
+  saveCookie: any;
+
+  constructor(private cookie: CookieService) {
+
+  }
 
   setSessionData() {
     sessionStorage.setItem('pie', 'peacan pie');
@@ -42,6 +49,24 @@ export class StorageComponent {
 
   clearLocalData() {
     localStorage.clear();
+  }
+
+  setCookie() {
+    let mins = 30;
+    let currentDate = new Date();
+    let expireDate = new Date(currentDate.getTime() + mins * 60000);
+    this.saveCookie = this.cookie.set('token', '123456', expireDate);
+  }
+
+  /**
+   * Check browser - Application tab / Domain specific
+   */
+  getCookie() {
+    this.saveCookie = this.cookie.get('token');
+  }
+
+  removeCookie() {
+    this.cookie.delete('token');
   }
 
 }
