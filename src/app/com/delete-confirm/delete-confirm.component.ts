@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { DataBankService } from '../../services/data-bank.service';
 
 @Component({
@@ -11,9 +11,9 @@ export class DeleteConfirmComponent {
 
   @Output() deleteConfirmValue = new EventEmitter<boolean>();
 
-  constructor(private dataBank: DataBankService) { }
+  @Input() receiveData: any;
 
-  onDelete(value: boolean) {
+  onConfirm(value: boolean) {
     this.deleteConfirmValue.emit(value);
   }
 

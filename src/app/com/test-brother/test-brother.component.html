@@ -1,0 +1,19 @@
+<div class="container text-center">
+    <div align="center" class="my-title">
+        <h2 style="font-family: fantasy;" class="m-2">Brother Component</h2>
+    </div>
+    <div class="my-body m-2">
+        <span style="font-weight: bold;">Data from Sister :</span>
+        <p>{{dataFrom}}</p>
+    </div>
+    <div id="input-for-sister">
+        <input class="m-1" style="border-radius: 6px; vertical-align: middle;" [(ngModel)]="testBrotherInput"
+            type="text">
+        <button (click)="sendData($event)"
+            style="vertical-align: middle; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"
+            type="button" class="btn btn-success btn-sm m-2">Send Data</button>
+        <button (click)="resetInput()"
+            style="vertical-align: middle; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"
+            type="button" class="btn btn-danger btn-sm m-2">Reset Data</button>
+    </div>
+</div>

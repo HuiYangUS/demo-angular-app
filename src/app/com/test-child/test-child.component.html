@@ -1,0 +1,16 @@
+<div class="container text-center">
+    <div align="center" class="my-title">
+        <h2 style="font-family: fantasy;" class="m-2">Child Component</h2>
+    </div>
+    <div class="my-body m-2">
+        <span style="font-weight: bold;">Data from Parent :</span>
+        <p>{{childInputProperty}}</p>
+    </div>
+    <div id="input-for-parent">
+        <input (keydown)="sendData($event)" style="border-radius: 6px; vertical-align: middle;"
+            [(ngModel)]="testChildInput" type="text">
+        <button (click)="resetInput()"
+            style="vertical-align: middle; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"
+            type="button" class="btn btn-danger btn-sm m-2">Reset</button>
+    </div>
+</div>

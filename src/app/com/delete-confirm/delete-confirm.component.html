@@ -1,22 +1,20 @@
 <!-- Modal -->
-<div class="modal fade" id="deleteModal" aria-hidden="true">
+<div class="modal fade" id="deleteModal" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
     <div class="modal-dialog">
-        <div class="modal-content border rounded">
-            <div style="display: flex;" class="modal-header-sm bg-warning border rounded-top">
-                <div align="left" style="flex: 1;">
-                    <h2 class="modal-title fs-5 m-2" id="deleteTitle">Delete Confirmation</h2>
-                </div>
-                <div class="m-2" align="right" style="flex: 1; vertical-align: middle;">
-                    <button type="button" class="btn-close m-1" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-content">
+            <div style="height: 50px;" class="modal-header bg-warning">
+                <div align="left">
+                    <h2 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"
+                        class="modal-title fs-4 m-2" id="deleteTitle">Confirmation Request</h2>
                 </div>
             </div>
-            <div class="modal-body">
-                <span style="font-size: larger;">Do you want to delete this record?</span>
+            <div align="center" class="modal-body">
+                <span style="font-size: larger; font-style: oblique;">Do you want to delete this record?</span>
             </div>
-            <div align="right" class="modal-footer-sm bg-warning border rounded-bottom">
-                <button (click)="onDelete(true)" type="button" class="btn btn-primary m-2"
+            <div class="modal-footer bg-warning justify-content-right">
+                <button (click)="onConfirm(true)" type="button" class="btn btn-primary m-1"
                     data-bs-dismiss="modal">Yes</button>
-                <button (click)="onDelete(false)" type="button" class="btn btn-secondary m-2"
+                <button (click)="onConfirm(false)" type="button" class="btn btn-secondary m-1"
                     data-bs-dismiss="modal">No</button>
             </div>
         </div>

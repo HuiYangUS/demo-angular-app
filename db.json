@@ -1,32 +1,32 @@
 {
   "users": [
     {
-      "id": 101,
       "firstName": "John",
       "lastName": "Smith",
-      "username": "SMI8THM",
-      "email": "john.smith@test.com"
+      "username": "JON7MIT",
+      "email": "john.smith@test",
+      "id": 1
     },
     {
-      "id": 102,
       "firstName": "Jane",
       "lastName": "Doe",
-      "username": "JAN6QOE",
-      "email": "jane.doe@demo.com"
+      "username": "ANE2DOE",
+      "email": "jane.doe@demo.com",
+      "id": 2
     },
     {
-      "id": 103,
       "firstName": "Hui",
       "lastName": "Yang",
-      "username": "HOY7YAG",
-      "email": "hui.yang@test.com"
+      "username": "HOT8TAG",
+      "email": "hui.yang@tester.com",
+      "id": 3
     },
     {
       "firstName": "Hui",
       "lastName": "Yang",
       "username": "TEST04",
-      "email": "huiyang@outlook.com",
-      "id": 104
+      "email": "demo@test.com",
+      "id": 4
     }
   ]
 }

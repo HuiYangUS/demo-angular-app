@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { DeleteConfirmComponent } from '../../com/delete-confirm/delete-confirm.component';
 import { TestConfirmComponent } from '../../com/test-confirm/test-confirm.component';
 import { DialogService } from '../../services/dialog.service';
+import { TestParentComponent } from '../../com/test-parent/test-parent.component';
 
 @Component({
   selector: 'app-test',
@@ -13,7 +14,8 @@ import { DialogService } from '../../services/dialog.service';
     CommonModule,
     FormsModule,
     DeleteConfirmComponent,
-    TestConfirmComponent
+    TestConfirmComponent,
+    TestParentComponent
   ],
   templateUrl: './test.component.html',
   styleUrl: './test.component.scss'
@@ -86,7 +88,7 @@ export class TestComponent {
     if (deleteInfo) {
       this.deleteMessage = "I had been deleted."
     } else {
-      this.deleteMessage = "I have survived for another day."
+      this.deleteMessage = "I have survived another day."
     }
   }
 

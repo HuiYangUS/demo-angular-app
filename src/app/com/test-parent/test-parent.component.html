@@ -1,0 +1,73 @@
+<div class="container text-center">
+    <!-- Create single row -->
+    <div class="row m-5">
+        <!-- How many columns to use: 12 max for single column, 6 for two columns, -->
+        <div class="col-12">
+            <div class="my-title">
+                <h2>2 Examples of Data Sharing (Parent -> Child & Child -> Parent)</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row m-5">
+        <div class="col">
+            <div>
+                <h3 class="my-card-title">Parent Component</h3>
+            </div>
+            <div>
+                <input style="border-radius: 6px; vertical-align: middle;" [(ngModel)]="parentProperty" type="text">
+                <button (click)="resetInput()"
+                    style="vertical-align: middle; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"
+                    type="button" class="btn btn-danger btn-sm m-2">Reset</button>
+            </div>
+            <div class="my-card-body m-2">
+                <span style="font-weight: bold;">Data from Child :</span>
+                <p>{{testParentData}}</p>
+            </div>
+        </div>
+        <!-- Vertical rule -->
+        <div class="vr p-0"></div>
+        <div class="col">
+            <app-test-child [childInputProperty]="parentProperty"
+                (childOutputProperty)="receive($event)"></app-test-child>
+        </div>
+    </div>
+
+    <div class="row m-5">
+        <div class="col-12">
+            <div class="my-title">
+                <h2>Example of Data Sharing between Siblings</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row m-5">
+        <div id="brother" class="col">
+            <app-test-brother (dataEventFromBrother)="receiveFromBrother($event)"
+                [dataFrom]="testSisterData"></app-test-brother>
+        </div>
+        <div class="vr p-0"></div>
+        <div id="sister" class="col">
+            <app-test-sister (dataEventFromSister)="receiveFromSister($event)"
+                [dataFrom]="testBrotherData"></app-test-sister>
+        </div>
+    </div>
+
+    <div class="row m-5">
+        <div class="col-12">
+            <div class="my-title">
+                <h2>Example of Data Sharing from Parent to Child using &#64;ViewChild</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row m-5">
+        <div class="col-12">
+            <app-reusable #reusable></app-reusable>
+        </div>
+        <div>
+            <label style="vertical-align: middle;" class="m-1" for="parent-message">Parent said:</label>
+            <input [(ngModel)]="displayMessage" style="vertical-align: middle; border-radius: 6px;" class="m-1"
+                type="text" placeholder="Parent said">
+            <button (click)="onSubmit()" class="btn btn-primary btn-sm m-1" type="submit">Submit</button>
+        </div>
+    </div>
+
+</div>

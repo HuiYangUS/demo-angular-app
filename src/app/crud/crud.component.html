@@ -20,6 +20,7 @@
                 <td align="center">
                     <button (click)="onView(user.id)" type="button" class="btn btn-secondary m-2">View</button>
                     <button (click)="onUpdate(user.id)" type="button" class="btn btn-success m-2">Update</button>
+                    <!-- All codes within the same element executed first before moving to the next one -->
                     <button (click)="onDelete(user.id)" data-bs-toggle="modal" data-bs-target="#deleteModal"
                         type="button" class="btn btn-danger m-2">Delete</button>
                     <app-delete-confirm (deleteConfirmValue)="receiveDeleteInfo($event)"

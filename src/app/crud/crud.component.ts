@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IUser } from '../domain/i-user';
 import { Router } from '@angular/router';
 import { DemoApiService } from '../services/demo-api.service';
@@ -14,7 +14,8 @@ export class CRUDComponent implements OnInit {
 
   apiData: IUser[] = [];
 
-  useThisID: number = 0;
+  @Input()
+  deleteID!: number;
 
   constructor(private apiService: DemoApiService, private router: Router) { }
 
@@ -38,13 +39,21 @@ export class CRUDComponent implements OnInit {
     this.router.navigate(['update-user', id]);
   }
 
+  /**
+   * Setup id for delete confirmation
+   * @param id 
+   */
   onDelete(id: number) {
-    this.useThisID = id;
+    this.deleteID = id;
+    console.log("Delete ID = " + id);
   }
 
   receiveDeleteInfo(deleteInfo: boolean) {
+    const deleteButton = document.activeElement as HTMLButtonElement;
+    deleteButton.blur();
+    console.log("Delete confirmed: " + deleteInfo);
     if (deleteInfo) {
-      this.apiService.deleteDataByID(this.useThisID).subscribe(result => {
+      this.apiService.deleteDataByID(this.deleteID).subscribe(result => {
         this.getAllData();
       });
     }

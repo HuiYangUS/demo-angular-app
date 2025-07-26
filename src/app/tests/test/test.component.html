@@ -12,6 +12,9 @@
         <li (click)="selectTab('Dialog')" class="nav-item">
             <a class="nav-link" data-bs-toggle="tab">Dialogs</a>
         </li>
+        <li (click)="selectTab('Grid')" class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab">Grid</a>
+        </li>
     </ul>
 </div>
 <div>
@@ -36,11 +39,12 @@
                         Dialog</button></li>
             </ul>
         </div>
-        @switch (dialogDemoSelectLabel) {
 
+        @switch (dialogDemoSelectLabel) {
+        <!-- Dialog Demo Options -->
         @case ("Delete Dialog") {
         <div>
-            <h3 class="m-3">Delete Dialog</h3>
+            <h3 class="m-2">Delete Dialog</h3>
             <div class="m-2" name="useDataEmitter">
                 <button type="button" class="btn btn-danger m-3" data-bs-toggle="modal" data-bs-target="#deleteModal">
                     Delete
@@ -69,9 +73,15 @@
         }
         <!-- Dialog Selection -->
         }
-        <!-- Tab Selection -->
+        <!-- Dialog Demo Content -->
         }
-
+        @case ("Grid") {
+        <div align="center">
+            <!-- <h3 id="test-container-title" class="m-3">Container</h3> -->
+        </div>
+        <app-test-parent></app-test-parent>
+        }
+        <!-- Tab Selection -->
         }
     </div>
 </div>
