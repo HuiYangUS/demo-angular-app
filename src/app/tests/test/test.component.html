@@ -58,14 +58,14 @@
         <h3 class="m-2">Parent-Child Dialog</h3>
         <div style="margin-left: 10px; margin-top: 15px;" name="useDataService">
             <div>
-                <input #testInput (keypress)="onKeyPress($event)" [(ngModel)]="parentMessage" style="margin-right: 5px;"
+                <input (keypress)="onKeyPress($event)" [(ngModel)]="parentMessage" style="margin-right: 5px;"
                     class="mb-0" type="text">
                 <button #testButton (click)="updateParentMessage()" type="button" class="btn btn-primary mb-1"
                     data-bs-toggle="modal" data-bs-target="#testConfirmModal">
                     Submit
                 </button>
             </div>
-            <app-test-confirm [childMessage]="parentMessage" #testConfirmModal></app-test-confirm>
+            <app-test-confirm #testConfirmModal></app-test-confirm>
         </div>
         }
         @default {

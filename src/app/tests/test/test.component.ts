@@ -28,11 +28,9 @@ export class TestComponent {
 
   parentMessage: string = ""
 
-  @ViewChild('testInput')
-  testInput!: ElementRef<HTMLInputElement>;
+  @ViewChild('testButton') testButton!: ElementRef<HTMLButtonElement>;
 
-  @ViewChild('testButton')
-  testButton!: ElementRef<HTMLButtonElement>;
+  @ViewChild('testConfirmModal') testConfirmCom!: TestConfirmComponent;
 
   testConfirmValue: boolean;
   testMessage: string = "";
@@ -49,8 +47,6 @@ export class TestComponent {
    */
   onKeyPress(keyboard: KeyboardEvent) {
     if (keyboard.key == "Enter") {
-      console.log(this.testInput.nativeElement.value)
-      console.log("You have entered the correct key.");
       this.testButton.nativeElement.click();
     }
   }
@@ -69,6 +65,7 @@ export class TestComponent {
     if (this.parentMessage.trim().length == 0) {
       this.parentMessage = "I have no parents."
     }
+    this.testConfirmCom.childMessage = this.parentMessage;
   }
 
   useDialogService() {
