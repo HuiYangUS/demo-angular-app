@@ -1,0 +1,26 @@
+<div class="container text-center">
+    <div class="row m-3">
+        <div class="col-4 m-1">
+            <h4 class="text-center">Session Storage</h4>
+            <p>{{targetValue}}</p>
+        </div>
+        <div class="col-4 m-1">
+            <h4 class="text-center">Local Storage</h4>
+            <p>{{localValue}}</p>
+        </div>
+    </div>
+    <div class="row m-3">
+        <div class="col-4 m-1 d-flex flex-row">
+            <button (click)="setSessionData()" class="btn btn-primary m-1">Set Session</button>
+            <button (click)="getSessionData()" class="btn  btn-success m-1">Read Session</button>
+            <button (click)="removeSessionData()" class="btn btn-danger m-1">Delete Session</button>
+            <button (click)="clearSession()" class="btn btn-secondary m-1">Clear Session</button>
+        </div>
+        <div class="col-4 m-1 d-flex flex-row">
+            <button (click)="setLocalData()" class="btn btn-primary m-1">Set Local Data</button>
+            <button (click)="getLocalData()" class="btn  btn-success m-1">Read Local Data</button>
+            <button (click)="removeLocalData()" class="btn btn-danger m-1">Delete Local Data</button>
+            <button (click)="clearLocalData()" class="btn btn-secondary m-1">Clear Local Data</button>
+        </div>
+    </div>
+</div>

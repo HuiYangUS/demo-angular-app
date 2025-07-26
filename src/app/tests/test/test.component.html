@@ -15,6 +15,9 @@
         <li (click)="selectTab('Grid')" class="nav-item">
             <a class="nav-link" data-bs-toggle="tab">Grid</a>
         </li>
+        <li (click)="selectTab('Storage')" class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab">Storage</a>
+        </li>
     </ul>
 </div>
 <div>
@@ -80,6 +83,9 @@
             <!-- <h3 id="test-container-title" class="m-3">Container</h3> -->
         </div>
         <app-test-parent></app-test-parent>
+        }
+        @case ("Storage") {
+        <app-storage></app-storage>
         }
         <!-- Tab Selection -->
         }

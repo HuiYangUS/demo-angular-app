@@ -6,6 +6,7 @@ import { DeleteConfirmComponent } from '../../com/delete-confirm/delete-confirm.
 import { TestConfirmComponent } from '../../com/test-confirm/test-confirm.component';
 import { DialogService } from '../../services/dialog.service';
 import { TestParentComponent } from '../../com/test-parent/test-parent.component';
+import { StorageComponent } from '../../com/storage/storage.component';
 
 @Component({
   selector: 'app-test',
@@ -15,7 +16,8 @@ import { TestParentComponent } from '../../com/test-parent/test-parent.component
     FormsModule,
     DeleteConfirmComponent,
     TestConfirmComponent,
-    TestParentComponent
+    TestParentComponent,
+    StorageComponent
   ],
   templateUrl: './test.component.html',
   styleUrl: './test.component.scss'
