@@ -1,36 +1,26 @@
 <div class="container">
     <div class="row m-5 bg-info rounded">
         <div class="col-2 m-1">
-            <select [(ngModel)]="testValue" class="form-select" aria-label="Default select example">
-                @if (testValue=="Choose") {
-                <option selected>Choose</option>
-                }
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+            <select [(ngModel)]="defaultValue" class="form-select" aria-label="Default select example">
+                <option value="One">One</option>
+                <option value="Two">Two</option>
+                <option value="Three">Three</option>
             </select>
         </div>
         <div class="col-2 m-1">
             <div class="m-1">
-                <span style="vertical-align: middle;">Result : {{testValue}}</span>
+                <span style="vertical-align: middle;">Selected : {{defaultValue}}</span>
             </div>
         </div>
     </div>
 
     <div class="row m-5">
         <div class="col-2 m-1">
-            @switch (testValue) {
+            @switch (defaultValue) {
             @case ("1") {
             <button class="rounded m-2" [ngStyle]="optionStyle1">Chartreuse</button>
             }
             }
-        </div>
-    </div>
-
-    <div class="row m-5">
-        <div class="col-3 m-1">
-            <button (click)="getSessionData()" class="btn  btn-success m-1">Read Session</button>
-            <span style="vertical-align: middle; margin-left: 10px;">{{targetValue}}</span>
         </div>
     </div>
 </div>

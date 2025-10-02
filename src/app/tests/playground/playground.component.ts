@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class PlaygroundComponent {
 
-  testValue = "Choose";
+  defaultValue = "";
 
   optionStyle1 = {
     "background-color": "chartreuse",
