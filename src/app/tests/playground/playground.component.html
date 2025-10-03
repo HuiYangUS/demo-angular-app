@@ -18,6 +18,18 @@
         </div>
     </div>
 
+    <div class="row m-5 bg-info rounded">
+        <div class="col-6 m-1">
+            <div class="input-group m-1">
+                <span class="input-group-text" style="vertical-align: middle;">Entered : {{result}}</span>
+                <input [(ngModel)]="userEnteredValue2" type="text" class="form-control" id="test-selected">
+                <button (click)="enterUserValue()" type="button" class="btn btn-primary">Submit</button>
+                <button (click)="resetUserEnteredValue()" type="button" class="btn btn-danger">Reset</button>
+            </div>
+        </div>
+    </div>
+
+
     <div class="row m-5">
         <div class="col-2 m-1">
             @switch (defaultValue) {

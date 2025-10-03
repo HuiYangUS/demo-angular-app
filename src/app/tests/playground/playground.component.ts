@@ -23,6 +23,19 @@ export class PlaygroundComponent {
 
   userEnteredValue: string = "";
 
+  userEnteredValue2: string = "";
+
+  result: string = "";
+
+  enterUserValue() {
+    this.result = this.userEnteredValue2;
+  }
+
+  resetUserEnteredValue() {
+    this.result = "";
+    this.userEnteredValue2 = "";
+  }
+
   optionStyle1 = {
     "background-color": "chartreuse",
     "border": "none",
