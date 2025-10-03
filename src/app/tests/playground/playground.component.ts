@@ -12,6 +12,17 @@ export class PlaygroundComponent {
 
   defaultValue = "";
 
+  clickTestSelect() {
+    console.log("Click <" + this.defaultValue + ">");
+  }
+
+  onChange() {
+    console.log("Click <" + this.defaultValue + ">");
+    this.userEnteredValue = this.defaultValue;
+  }
+
+  userEnteredValue: string = "";
+
   optionStyle1 = {
     "background-color": "chartreuse",
     "border": "none",

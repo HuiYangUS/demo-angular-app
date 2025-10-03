@@ -1,15 +1,19 @@
 <div class="container">
     <div class="row m-5 bg-info rounded">
         <div class="col-2 m-1">
-            <select [(ngModel)]="defaultValue" class="form-select" aria-label="Default select example">
-                <option value="One">One</option>
-                <option value="Two">Two</option>
-                <option value="Three">Three</option>
+            <select (change)="onChange()" [(ngModel)]="defaultValue" class="form-select">
+                @if(defaultValue!=""){
+                <option value="">None</option>
+                }
+                <option value="A">One</option>
+                <option value="BB">Two</option>
+                <option value="CCC">Three</option>
             </select>
         </div>
-        <div class="col-2 m-1">
-            <div class="m-1">
-                <span style="vertical-align: middle;">Selected : {{defaultValue}}</span>
+        <div class="col-3 m-1">
+            <div class="input-group mb-1">
+                <span class="input-group-text" style="vertical-align: middle;">Selected Code</span>
+                <input [(ngModel)]="userEnteredValue" type="text" class="form-control" id="test-selected">
             </div>
         </div>
     </div>
